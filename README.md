@@ -17,7 +17,7 @@ To register as a listener for DOM Events, such as mouse-clicks, keyboard activit
 
 The CDP Events are not traditional DOM Events, they are the Chrome-specific debugging events. Each of the CDP Domains have various Events that can potentially occur and delivered to a CDP Client.  There are very interesting ones, in particular you can be notified for changes to the DOM tree in real-time, as nodes are added / removed / changed, although sometimes it is a challenge to get it working properly.
 
-The overall console window is resizable, but on Windows it is a bit flakey with curses, and my code for dynamically resizing the split-screen and keeping everything in sync might have a bug or two, but mostly it works.
+The overall console window is resizable.  Though, the Windows curses support is a bit flakey, and my code for dynamically resizing the split-screen and keeping everything in sync might have a bug or two, but mostly it works.
 
 Here are a few screenshots.  The default mode is Split-Screen view.  Both windows continuously scroll as new data arrives from Chrome.  The upper window is for the DOM Events, the lower window is for the CDP Events.
 
