@@ -1,5 +1,5 @@
 
-ChromeClient
+## ChromeClient
 
 Still under construction, not yet complete and needs optimizations.
 
@@ -11,11 +11,9 @@ Basic summary:
 
 ...
 
-The two main dependencies is the [Python CDP](https://py-cdp.readthedocs.io/en/latest/) package which provides object wrappers for the JSON CDP wire messages, and also [Python websocket-client](https://websocket-client.readthedocs.io/en/latest/) for transport.
+The two main dependencies are the [Python CDP](https://py-cdp.readthedocs.io/en/latest/) package which provides object wrappers for the JSON CDP wire messages, and also [Python websocket-client](https://websocket-client.readthedocs.io/en/latest/) for transport.
 
-...
-
-To register as a listener for DOM Events, such as mouse-clicks, keyboard activity, messages, errors, any type of DOM event, I used a CDP protocol method to inject a Javascript function which calls addEventListener() for every DOM Event that exists in "Window".  I simply wrote the Javascript function as a Python string.  When DOM Events occur and the Javascript listener is called, it dumps the Event + Target information to console.log, which the CDP protocol sends to the Client.  Information about the [CDP injection method](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-addScriptToEvaluateOnNewDocument).
+To register as a listener for DOM Events, such as mouse-clicks, keyboard activity, messages, errors, any type of DOM event, I used a CDP protocol method to inject a Javascript function which calls addEventListener() for every DOM Event that exists in "Window".  I simply wrote the Javascript function as a Python string.  When DOM Events occur and the Javascript listener is called, it dumps the Event + Target information to console.log, which the CDP protocol sends to the Client.  The Client obtains the internal object IDs and queries further data about the Events.  Information about the [CDP injection method](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-addScriptToEvaluateOnNewDocument).
 
 The CDP Events are not traditional DOM Events, they are the Chrome-specific debugging events. Each of the CDP Domains have various Events that can potentially be created and delivered to a CDP Client.  There are very interesting ones, in particular you can be notified for changes to the DOM tree in real-time, as nodes are added / removed / changed, although sometimes it is a challenge to get it working properly.
 
