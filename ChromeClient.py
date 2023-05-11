@@ -27,13 +27,6 @@ class ChromeClient():
             self.ChromeLauncher         = ChromeLauncher()
             self.CommandQueue           = mp.Queue()
             self.EventQueue             = mp.Queue()
-            # self.EventProcessorStopFlag = mp.Value("b", False, lock = True)
-            
-            #( self.ReaderCommandPipe, 
-            #  self.ClientCommandPipe, ) = mp.Pipe()
-            
-            #( self.ReaderEventPipe, 
-            #  self.ClientEventPipe,   ) = mp.Pipe()
             
             # Hack to switch websocket._abnf lock class 
             # to use the serializable multiprocess class
