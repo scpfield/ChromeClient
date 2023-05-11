@@ -37,12 +37,12 @@ One thing I learned with Curses, it is similar to all other UI frameworks in tha
 
 For DOM events, the user can either view the Event detail or the Target detail  (the target of the event).  This is what the Event detail view looks like.  Pretty basic.  It is scrollable by using the Arrow keys.
 
-Event view for the Key event.
+Detail view for a Key event.
 
-![image](https://github.com/scpfield/ChromeClient/assets/95513302/37315944-a8cd-462f-b921-760e688cf1fc)
+![image](https://github.com/scpfield/ChromeClient/assets/95513302/a7babac6-d7b8-4956-9b8d-9828ee7508d8)
 
 
-Target view.
+Target view of the Key event.
 
 ![image](https://github.com/scpfield/ChromeClient/assets/95513302/0b741c28-935c-470a-8c02-6d7efcb803e0)
 
