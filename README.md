@@ -27,18 +27,13 @@ The overall console window is resizable.  Though, the Windows curses support is 
 
 There can be quite a lot of Events happening very fast, so there is Pause + Resume capability.  Items in each window are selectable by clicking on them with a mouse.  Once selected, the Arrow Keys work for scrolling up and down through the buffers of saved events in memory.  Currently there is no max buffer size.  You can also switch into Full-Screen mode for either DOM or CDP Events if the Split Screen is becoming annoying.  
 
-If an Item is selected, the user can hit Enter or double-click, which will display the Detail view of the selected Event, because there is way too much information about an Event to display in a single line.  The Detail view dumps the raw JSON message from Chrome.
-
-One thing I learned with Curses, it is similar to all other UI frameworks in that you cannot have multiple threads concurrently accessing UI elements.  At first I tried protecting each UI element with locks and such but it was error-prone and not very reliable.  So instead I run the all the curses UI code in a single, separate Python thread that reads from input queues for anything that needs to touch the UI.  Client modules that need to add / update the UI post messages to the input queues which the single UI thread reads from.  
-
-Here are more screenshots.  This is a full-screen mode of the CDP Events.
-
-
 
 ![image](https://github.com/scpfield/ChromeClient/assets/95513302/e3b17253-4ca4-4536-8390-7e9c5282d809)
 
 
-For any Event, double-clicking or hitting Enter shows the Detail view, which is simply the dump of the JSON from Chrome.  
+If an Item is selected, the user can hit Enter or double-click, which displays the Detail view of the selected Event, because there is way too much information about an Event to display in a single line.  The Detail view dumps the raw JSON message from Chrome.
+
+One thing I learned with Curses, it is similar to all other UI frameworks in that you cannot have multiple threads concurrently accessing UI elements.  At first I tried protecting each UI element with locks and such but it was error-prone and not very reliable.  So instead I run the all the curses UI code in a single, separate Python thread that reads from input queues for anything that needs to touch the UI.  Client modules that need to add / update the UI post messages to the input queues which the single UI thread reads from.  
 
 For DOM events, the user can either view the Event detail or the Target detail  (the target of the event).  This is what the Event detail view looks like.  Pretty basic.  It is scrollable by using the Arrow keys.
 
@@ -59,6 +54,10 @@ For CDP Events, this is an example of a "childNodeInserted" Event.  Most/all of 
 
 ![image](https://github.com/scpfield/ChromeClient/assets/95513302/adc541d4-1a15-42f7-9a53-afcddb6da3f1)
 
+
+I plan to retrieve all the further Node information for the CDP Detail views, instead of showing just the NodeIds.  
+
+...
 
 Here is an example of an "animationStarted" CDP Event, for my favorite testing app, the Nessus app when it displays the Spinning Icon.
 
