@@ -71,4 +71,10 @@ It also has a few Javascript Parse Failures too, but so does Microsoft and other
 ![image](https://github.com/scpfield/ChromeClient/assets/95513302/f764d879-c0f9-4a4a-94cb-acf5ff28b9be)
 
 
+Finally, here are two short videos of what it looks like when running.
+
+[The first video](https://www.loom.com/share/9d258db5fb82405b8524c0e2fe63237d) is using my favorite Tenable test app, and you will notice that due to the large volume of Mouse Events (not a bug in Tenable),  my code takes a little while to catch-up.  I should probably exclude some of these mouse events because there are so many that are triggered, they tend to drown out the other ones.
+
+[The second video](https://www.loom.com/share/63dbb7f4e709407b9f12f4fd1f9c7266) is microsoft.com's home page.  It is funny.  All it does is generate "transition" related events as it automatically scrolls through various slides.  I didn't click or navigate the site at all, but just monitoring what it does.  Each time it transitions to a new slide, a short burst of both DOM and CDP events occur.
+
 
