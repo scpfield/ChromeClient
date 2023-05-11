@@ -17,16 +17,15 @@ To register as a listener for DOM Events, such as mouse-clicks, keyboard activit
 
 The CDP Events are not traditional DOM Events, they are the Chrome-specific debugging events. Each of the CDP Domains have various Events that can potentially occur and delivered to a CDP Client.  There are very interesting ones, in particular you can be notified for changes to the DOM tree in real-time, as nodes are added / removed / changed, although sometimes it is a challenge to get it working properly.
 
-The overall console window is resizable.  Though, the Windows curses support is a bit flakey, and my code for dynamically resizing the split-screen and keeping everything in sync might have a bug or two, but mostly it works.
-
 Here are a few screenshots.  The default mode is Split-Screen view.  Both windows continuously scroll as new data arrives from Chrome.  The upper window is for the DOM Events, the lower window is for the CDP Events.
-
 
 
 ![image](https://github.com/scpfield/ChromeClient/assets/95513302/c5af4c05-1014-4329-96f0-3094980ed6c6)
 
 
-There can be quite a lot of Events happening, so there is Pause + Resume capability.  Items in each window are selectable by clicking on them with a mouse.  Once selected, the Arrow Keys work for scrolling up and down through the buffers of saved events in memory.  Currently there is no max buffer size.  You can also switch into Full-Screen mode for either DOM or CDP Events if the Split Screen is becoming annoying.  
+The overall console window is resizable.  Though, the Windows curses support is a bit flakey, and my code for dynamically resizing the split-screen and keeping everything in sync might have a bug or two, but mostly it works.
+
+There can be quite a lot of Events happening very fast, so there is Pause + Resume capability.  Items in each window are selectable by clicking on them with a mouse.  Once selected, the Arrow Keys work for scrolling up and down through the buffers of saved events in memory.  Currently there is no max buffer size.  You can also switch into Full-Screen mode for either DOM or CDP Events if the Split Screen is becoming annoying.  
 
 If an Item is selected, the user can hit Enter or double-click, which will display the Detail view of the selected Event, because there is way too much information about an Event to display in a single line.  The Detail view dumps the raw JSON message from Chrome.
 
